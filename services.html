@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Blissera</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .service-category {
+            padding: var(--spacing-xxl) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .service-category:nth-child(even) {
+            background-color: var(--bg-secondary);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .category-content h2 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .service-list {
+            margin-top: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .service-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+        }
+
+        .service-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 1.25rem;
+        }
+
+        .category-image {
+            position: relative;
+        }
+
+        .category-image img {
+            border-radius: 4px;
+            box-shadow: var(--shadow-lg);
+            width: 100%;
+        }
+
+        .category-grid.reverse .category-image {
+            order: -1;
+        }
+
+        /* How We Work Section */
+        .process-section {
+            background-color: #faf9f6;
+            color: var(--text-primary);
+            padding: var(--spacing-xxl) 0;
+        }
+
+        .process-section .subtitle,
+        .process-section h2,
+        .process-section p {
+            color: var(--text-primary);
+        }
+
+        .process-section .subtitle {
+            color: var(--accent-color);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: var(--spacing-xl);
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-number {
+            font-family: var(--font-secondary);
+            font-size: 4rem;
+            color: var(--accent-color);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .process-step h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .process-step p {
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 992px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .category-grid.reverse .category-image {
+                order: 0;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <!-- Invisible Spacer to perfectly match Homepage Logo width for alignment -->
+            <div style="width: 45px; height: 45px; padding: 0.25rem 0;"></div>
+            <button class="menu-toggle" aria-label="Toggle Menu"><span class="hamburger"></span></button>
+            <nav class="nav-menu">
+                <div class="mobile-menu-header">
+                    <img src="assets/images/header-logo.png?v=2" alt="Blissera Logo" class="mobile-menu-logo">
+                </div>
+                <div class="nav-links-container">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="services.html" class="nav-link active">Services</a>
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="mobile-menu-footer">
+                    <a href="tel:+919288041022" class="mobile-contact-link">+91 9288041022</a>
+                    <a href="tel:+917302285926" class="mobile-contact-link">+91 7302285926</a>
+                    <a href="mailto:blissera0@gmail.com" class="mobile-contact-link">blissera0@gmail.com</a>
+                    <div class="mobile-social-icons">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/blissera__/" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container fade-up" style="position: relative; z-index: 2;">
+                <h1 class="heading-xl" style="color: var(--white); text-shadow: 0 4px 12px rgba(0,0,0,0.5);">Our
+                    Services</h1>
+                <p class="heading-md" style="color: #EEE; font-family: var(--font-primary); font-weight: 300;">Bespoke
+                    event design for business and life.</p>
+            </div>
+        </section>
+
+        <!-- 1. Weddings, Haldi, Mehndi, Engagements -->
+        <section id="weddings" class="service-category">
+            <div class="container category-grid reverse">
+                <div class="category-content fade-up">
+                    <span class="subtitle"></span>
+                    <h2 class="heading-lg">Weddings, Haldi, Mehndi & Engagements</h2>
+                    <p style="font-size: 1.125rem; line-height: 1.8; color: var(--text-secondary);">Your love story
+                        deserves a breathtaking setting. We specialize in finely detailed, culturally rich matrimonial
+                        celebrations where deep emotional resonance meets impeccable design and seamless execution.</p>
+                    <a href="contact.html?type=wedding" class="btn btn-outline" style="margin-top: 1.5rem;">Inquire
+                        Now</a>
+                </div>
+                <div class="category-image fade-up">
+                    <img src="assets/images/wed.jpeg" alt="Blissera Wedding and Haldi Setup"
+                        style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Birthdays & Theme Parties -->
+        <section id="birthdays" class="service-category">
+            <div class="container category-grid">
+                <div class="category-content fade-up">
+                    <h2 class="heading-lg">Birthdays & Theme Parties</h2>
+                    <p style="font-size: 1.125rem; line-height: 1.8; color: var(--text-secondary);">Turn personal
+                        milestones into unforgettable immersive experiences. From intimate curated dinners to elaborate,
+                        high-energy themed celebrations, we design private parties that leave a lasting impression.</p>
+                    <a href="contact.html?type=birthday" class="btn btn-outline" style="margin-top: 1.5rem;">Inquire
+                        Now</a>
+                </div>
+                <div class="category-image fade-up">
+                    <img src="assets/images/portfolio2.png" alt="High-end Birthday Celebration Dinner setup"
+                        style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Corporate Events & Launch Parties -->
+        <section id="corporate" class="service-category">
+            <div class="container category-grid reverse">
+                <div class="category-content fade-up">
+                    <span class="subtitle">B2B Focus</span>
+                    <h2 class="heading-lg">Corporate Events & Launch Parties</h2>
+                    <p style="font-size: 1.125rem; line-height: 1.8; color: var(--text-secondary);">Precision-driven
+                        logistics for the modern brand. We execute flawless galas, impactful product launches, and
+                        corporate milestones that perfectly reflect your company's aesthetic and professional standards.
+                    </p>
+                    <a href="contact.html?type=corporate" class="btn btn-outline" style="margin-top: 1.5rem;">Inquire
+                        Now</a>
+                </div>
+                <div class="category-image fade-up">
+                    <img src="assets/images/corp.jpg" alt="Elegant Corporate Event Gala"
+                        style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Live Shows & Entertainment Nights -->
+        <section id="live" class="service-category">
+            <div class="container category-grid">
+                <div class="category-content fade-up">
+                    <h2 class="heading-lg">Live Shows & Entertainment Nights</h2>
+                    <p style="font-size: 1.125rem; line-height: 1.8; color: var(--text-secondary);">Captivating
+                        audiences through flawless production. We manage the complex staging, talent coordination, and
+                        technical logistics required to produce spectacular, high-energy live entertainment events.</p>
+                    <a href="contact.html?type=live" class="btn btn-outline" style="margin-top: 1.5rem;">Inquire Now</a>
+                </div>
+                <div class="category-image fade-up">
+                    <img src="assets/images/portfolio18.jpg" alt="Grand Stage Lighting for Live Entertainment"
+                        style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Destination Events & Styling -->
+        <section id="destination" class="service-category">
+            <div class="container category-grid reverse">
+                <div class="category-content fade-up">
+                    <h2 class="heading-lg">Destination Events & Styling</h2>
+                    <p style="font-size: 1.125rem; line-height: 1.8; color: var(--text-secondary);">Extraordinary
+                        celebrations, anywhere in the world. We handle the intricate logistics of cross-border planning,
+                        venue scouting, and remote styling to bring the Blissera standard of luxury to your dream
+                        destination.</p>
+                    <a href="contact.html?type=destination" class="btn btn-outline" style="margin-top: 1.5rem;">Inquire
+                        Now</a>
+                </div>
+                <div class="category-image fade-up">
+                    <img src="assets/images/portfolio17.png" alt="Luxury Palace Destination Event"
+                        style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Custom Sketching & 3D Design -->
+        <section id="sketching-section" class="service-category"
+            style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('assets/images/custom.jpg'); background-size: cover; background-position: center; padding: 100px 0;">
+            <div class="container"
+                style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                <div class="category-content fade-up" style="width: 100%;">
+                    <span class="subtitle"
+                        style="display: block; margin-bottom: 1.5rem; color: #ffffff !important;">CURATED EVENT
+                        VISUALIZATION</span>
+                    <h2 class="heading-lg"
+                        style="margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; color: #ffffff !important;">
+                        Custom
+                        Sketching & 3D Design</h2>
+                    <p
+                        style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 0; max-width: 750px; margin-left: auto; margin-right: auto; color: #ffffff !important;">
+                        Your vision deserves to be seen before it is built. We go beyond traditional planning by
+                        offering comprehensive sketching and 3D architectural design services. We translate your unique
+                        ideas into tangible, photorealistic concepts, allowing you to explore a variety of layout
+                        choices, perfect the aesthetic details, and walk through your luxury venue with absolute
+                        confidence long before the first flower is placed.</p>
+                    <a href="contact.html?type=sketching" class="btn btn-outline"
+                        style="margin-top: 2.5rem; display: inline-block; color: #ffffff !important; border-color: #ffffff !important;">INQUIRE
+                        NOW</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- How We Work Section -->
+        <section id="approach" class="process-section">
+            <div class="container">
+                <div class="text-center fade-up">
+                    <span class="subtitle">Our Process</span>
+                    <h2 class="heading-lg">How We Work</h2>
+                    <p style="max-width: 700px; margin: 0 auto; color: var(--text-secondary);">A seamless three-pillar
+                        approach designed to transform your vision into an unforgettable experience.</p>
+                </div>
+
+                <div class="process-grid">
+                    <div class="process-step fade-up" style="transition-delay: 0.1s;">
+                        <div class="process-number">01</div>
+                        <h3>Venue Sourcing & Securing</h3>
+                        <p>Leveraging our exclusive network to secure the perfect backdrop. We ensure your venue
+                            flawlessly aligns with both your visual aesthetic and complex logistical requirements.</p>
+                    </div>
+
+                    <div class="process-step fade-up" style="transition-delay: 0.2s;">
+                        <div class="process-number">02</div>
+                        <h3>Bespoke Event Design</h3>
+                        <p>Developing a cohesive, breathtaking narrative. We meticulously weave your personal story or
+                            corporate identity into a tangible, immersive visual experience.</p>
+                    </div>
+
+                    <div class="process-step fade-up" style="transition-delay: 0.3s;">
+                        <div class="process-number">03</div>
+                        <h3>Flawless Execution</h3>
+                        <p>Transforming the concept into reality down to the finest detail. From dramatic lighting to
+                            custom floralscapes, we curate an environment that leaves your guests in absolute awe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section text-center fade-up" style="background-color: var(--white);">
+            <div class="container">
+                <h2 class="heading-md">Let's Discuss Your Next Event</h2>
+                <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Start Planning</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p>&copy; 2026 Blissera. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

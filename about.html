@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Blissera</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .page-header {
+            padding: calc(var(--spacing-xxl) + 80px) 0 120px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/groom.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .page-header .subtitle,
+        .page-header .heading-lg {
+            color: #ffffff !important;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 0;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Decorative element */
+        .about-image::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 200px;
+            height: 200px;
+            border: 2px solid var(--accent-color);
+            z-index: -1;
+        }
+
+        .why-choose-us-section {
+            background-color: var(--bg-secondary);
+            padding: var(--spacing-xxl) 0;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: var(--spacing-lg);
+            align-items: stretch;
+        }
+
+        .reason-card {
+            background-color: var(--white);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--accent-color);
+            transition: transform var(--transition-fast);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100%;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .reason-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .reason-card p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .founder-image img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .founder-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .founder-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .founder-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .founder-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+
+<body class="light-bg-mode">
+
+    <!-- Ensure header gets dark text via JS due to white background -->
+    <header class="site-header scrolled">
+        <div class="container nav-container">
+            <!-- Invisible Spacer to perfectly match Homepage Logo width for alignment -->
+            <div style="width: 45px; height: 45px; padding: 0.25rem 0;"></div>
+            <button class="menu-toggle" aria-label="Toggle Menu"><span class="hamburger"></span></button>
+            <nav class="nav-menu">
+                <div class="mobile-menu-header">
+                    <img src="assets/images/header-logo.png?v=2" alt="Blissera Logo" class="mobile-menu-logo">
+                </div>
+                <div class="nav-links-container">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+                    <a href="about.html" class="nav-link active">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="mobile-menu-footer">
+                    <a href="tel:+919288041022" class="mobile-contact-link">+91 9288041022</a>
+                    <a href="tel:+917302285926" class="mobile-contact-link">+91 7302285926</a>
+                    <a href="mailto:blissera0@gmail.com" class="mobile-contact-link">blissera0@gmail.com</a>
+                    <div class="mobile-social-icons">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/blissera__/" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header fade-up">
+            <div class="container">
+                <span class="subtitle">Who We Are</span>
+                <h1 class="heading-lg">Crafting the Extraordinary</h1>
+            </div>
+        </div>
+
+        <section class="section pt-0" style="background-color: var(--white); padding-bottom: 0; padding-top: 100px;">
+            <div class="container about-grid">
+                <div class="about-content fade-up">
+                    <h2 class="heading-md">Our Philosophy</h2>
+                    <p>At Blissera, we believe that every event is an opportunity to tell a compelling story. We are
+                        a premier boutique event planning agency founded on the principle that the best events are those
+                        that seamlessly blend aesthetic brilliance with flawless, invisible logistics.</p>
+                    <p>We approach each project not just as planners, but as designers and architects of experience.
+                        Whether it's the warm, emotional resonance needed for a family milestone or the sharp,
+                        professional precision required for a corporate gala, our dedicated team ensures every detail
+                        reflects your specific vision.</p>
+                </div>
+                <!-- Team/Behind the scenes photo -->
+                <div class="about-image fade-up" style="transition-delay: 0.2s; width: 100%; max-width: 550px; margin: 0 auto;">
+                    <img src="assets/images/backdrop.jpeg"
+                        alt="Blissera Team working behind the scenes on a floral arrangement" style="width: 100%; height: auto; object-fit: cover; display: block;">
+                </div>
+            </div>
+        </section>
+
+        <section class="section fade-up"
+            style="background-color: var(--white); padding-top: 100px; padding-bottom: var(--spacing-xxl);">
+            <div class="container founder-grid">
+
+                <div class="founder-image" style="width: 100%; max-width: 450px; margin: 0 auto;">
+                    <img src="assets/images/founder-portrait.png" alt="Supriya Kumari, Founder of Blissera" style="width: 100%; height: auto; object-fit: cover; display: block; border-radius: 8px;">
+                </div>
+
+                <div class="founder-content">
+                    <span class="subtitle"
+                        style="font-family: var(--font-primary); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-color); margin-bottom: 0.5rem; font-weight: 500;">FOUNDER
+                        & LEAD PLANNER</span>
+                    <h2 class="heading-lg"
+                        style="margin-bottom: 1.5rem; font-family: var(--font-secondary); font-size: 2.5rem; color: var(--text-primary);">
+                        Supriya Kumari</h2>
+                    <p>
+                        Supriya founded Blissera on a simple promise: to execute extraordinary events with
+                        unmatched efficiency and absolute passion. Known for her exceptional client relations and
+                        confident leadership, she expertly manages every moving part behind the scenes. For her,
+                        true luxury means giving her clients the ultimate peace of mind to simply step back and enjoy
+                        their brilliantly orchestrated celebration.
+                    </p>
+                    <a href="contact.html" class="btn btn-outline" style="display: table; margin-top: 0.5rem;">Connect
+                        with Supriya</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-choose-us-section"
+            style="padding-bottom: calc(var(--spacing-xxl) * 1.5); background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/img4.jpg'); background-size: cover; background-position: center;">
+            <div class="container">
+                <div class="text-center fade-up">
+                    <h2 class="heading-lg" style="color: #ffffff !important;">Why Choose Us</h2>
+                    <p style="color: #ffffff !important;">The differences that set our boutique agency apart.</p>
+                </div>
+
+                <div class="reasons-grid">
+                    <div class="reason-card fade-up">
+                        <h3>Signature Event Design</h3>
+                        <p>We reject cookie-cutter templates. From breathtaking floral installations to immersive
+                            lighting, every detail is meticulously curated to tell your unique story and leave a lasting
+                            impression on your guests.</p>
+                    </div>
+
+                    <div class="reason-card fade-up" style="transition-delay: 0.1s;">
+                        <h3>Complete Peace of Mind</h3>
+                        <p>True luxury is being a guest at your own celebration. We handle complex timelines and
+                            invisible logistics with absolute precision behind the scenes, so you can simply step back
+                            and enjoy the moment.</p>
+                    </div>
+
+                    <div class="reason-card fade-up" style="transition-delay: 0.2s;">
+                        <h3>Elite Industry Access</h3>
+                        <p>We open doors to the finest venues, top-tier caterers, and masterful artisans. Our
+                            established relationships mean your event is brought to life by a trusted team of the
+                            industry’s absolute best.</p>
+                    </div>
+
+                    <div class="reason-card fade-up" style="transition-delay: 0.3s;">
+                        <h3>Unwavering Dedication</h3>
+                        <p>We believe in quality over quantity. By accepting a strictly limited number of commissions
+                            each season, we guarantee your milestone receives our undivided focus, infinite patience,
+                            and absolute devotion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p>&copy; 2026 Blissera. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
