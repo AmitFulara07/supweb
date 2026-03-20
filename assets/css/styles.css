@@ -946,3 +946,12 @@ img {
   background: transparent !important;
   background-color: transparent !important;
 }
+
+/* Desktop Logo Sizing */
+@media (min-width: 768px) {
+  .site-header .logo img {
+    height: 75px !important;
+    max-height: 80px !important;
+    object-fit: contain !important;
+  }
+}
