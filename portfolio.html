@@ -12,10 +12,12 @@
     <style>
         .page-header {
             padding: calc(var(--spacing-xxl) + 80px) 0 120px;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/cover5.jpg');
+            
             background-size: cover;
             background-position: center;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .page-header .subtitle,
@@ -174,9 +176,21 @@
                 background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
             }
         }
+    
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
     </style>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/header-logo.png">
+
+    <!-- Preload critical hero image -->
+    
+    <link rel="preload" as="image" imagesrcset="assets/images/optimized/wed2-400w.avif 400w, assets/images/optimized/wed2-800w.avif 800w, assets/images/optimized/wed2-1200w.avif 1200w, assets/images/optimized/wed2-2000w.avif 2000w" imagesizes="100vw" type="image/avif">
 </head>
 
 <body class="light-bg-mode">
@@ -225,6 +239,12 @@
 
     <main>
         <div class="page-header fade-up">
+
+        <picture class="hero-bg-picture" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;">
+            <source srcset="assets/images/optimized/cover5-400w.avif 400w, assets/images/optimized/cover5-800w.avif 800w, assets/images/optimized/cover5-1200w.avif 1200w, assets/images/optimized/cover5-2000w.avif 2000w" sizes="100vw" type="image/avif">
+            <source srcset="assets/images/optimized/cover5-400w.webp 400w, assets/images/optimized/cover5-800w.webp 800w, assets/images/optimized/cover5-1200w.webp 1200w, assets/images/optimized/cover5-2000w.webp 2000w" sizes="100vw" type="image/webp">
+            <img src="assets/images/optimized/cover5-2000w.webp" alt="Background" class="hero-bg-img" style="width: 100%; height: 100%; object-fit: cover;" >
+        </picture>
             <div class="container">
                 <span class="subtitle">Our Work</span>
                 <h1 class="heading-lg">Event Portfolio</h1>
@@ -249,88 +269,200 @@
                 <!-- Gallery Grid -->
                 <div class="portfolio-grid fade-up">
                     <div class="portfolio-item destination">
-                        <img src="assets/images/sup4.jpeg" alt="Blissera Destination Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/sup4-400w.avif 400w, assets/images/optimized/sup4-800w.avif 800w, assets/images/optimized/sup4-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/sup4-400w.webp 400w, assets/images/optimized/sup4-800w.webp 800w, assets/images/optimized/sup4-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/sup4.jpeg" alt="Blissera Destination Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/ring.jpeg" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/ring-400w.avif 400w, assets/images/optimized/ring-800w.avif 800w, assets/images/optimized/ring-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/ring-400w.webp 400w, assets/images/optimized/ring-800w.webp 800w, assets/images/optimized/ring-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/ring.jpeg" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/wed2.jpeg" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/wed2-400w.avif 400w, assets/images/optimized/wed2-800w.avif 800w, assets/images/optimized/wed2-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/wed2-400w.webp 400w, assets/images/optimized/wed2-800w.webp 800w, assets/images/optimized/wed2-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/wed2.jpeg" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item destination">
-                        <img src="assets/images/pool.jpeg" alt="Blissera Destination Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/pool-400w.avif 400w, assets/images/optimized/pool-800w.avif 800w, assets/images/optimized/pool-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/pool-400w.webp 400w, assets/images/optimized/pool-800w.webp 800w, assets/images/optimized/pool-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/pool.jpeg" alt="Blissera Destination Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/sup10.jpeg" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/sup10-400w.avif 400w, assets/images/optimized/sup10-800w.avif 800w, assets/images/optimized/sup10-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/sup10-400w.webp 400w, assets/images/optimized/sup10-800w.webp 800w, assets/images/optimized/sup10-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/sup10.jpeg" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/bluetheme.jpeg" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/bluetheme-400w.avif 400w, assets/images/optimized/bluetheme-800w.avif 800w, assets/images/optimized/bluetheme-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/bluetheme-400w.webp 400w, assets/images/optimized/bluetheme-800w.webp 800w, assets/images/optimized/bluetheme-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/bluetheme.jpeg" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item destination">
-                        <img src="assets/images/portfolio7.png" alt="Blissera Destination Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/portfolio7-400w.avif 400w, assets/images/optimized/portfolio7-800w.avif 800w, assets/images/optimized/portfolio7-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/portfolio7-400w.webp 400w, assets/images/optimized/portfolio7-800w.webp 800w, assets/images/optimized/portfolio7-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/portfolio7.png" alt="Blissera Destination Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/portfolio8.png" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/portfolio8-400w.avif 400w, assets/images/optimized/portfolio8-800w.avif 800w, assets/images/optimized/portfolio8-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/portfolio8-400w.webp 400w, assets/images/optimized/portfolio8-800w.webp 800w, assets/images/optimized/portfolio8-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/portfolio8.png" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/portfolio9.png" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/portfolio9-400w.avif 400w, assets/images/optimized/portfolio9-800w.avif 800w, assets/images/optimized/portfolio9-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/portfolio9-400w.webp 400w, assets/images/optimized/portfolio9-800w.webp 800w, assets/images/optimized/portfolio9-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/portfolio9.png" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/portfolio10.png" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/portfolio10-400w.avif 400w, assets/images/optimized/portfolio10-800w.avif 800w, assets/images/optimized/portfolio10-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/portfolio10-400w.webp 400w, assets/images/optimized/portfolio10-800w.webp 800w, assets/images/optimized/portfolio10-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/portfolio10.png" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item destination">
-                        <img src="assets/images/portfolio11.png" alt="Blissera Destination Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/portfolio11-400w.avif 400w, assets/images/optimized/portfolio11-800w.avif 800w, assets/images/optimized/portfolio11-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/portfolio11-400w.webp 400w, assets/images/optimized/portfolio11-800w.webp 800w, assets/images/optimized/portfolio11-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/portfolio11.png" alt="Blissera Destination Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/portfolio12.png" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/portfolio12-400w.avif 400w, assets/images/optimized/portfolio12-800w.avif 800w, assets/images/optimized/portfolio12-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/portfolio12-400w.webp 400w, assets/images/optimized/portfolio12-800w.webp 800w, assets/images/optimized/portfolio12-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/portfolio12.png" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/portfolio13.png" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/portfolio13-400w.avif 400w, assets/images/optimized/portfolio13-800w.avif 800w, assets/images/optimized/portfolio13-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/portfolio13-400w.webp 400w, assets/images/optimized/portfolio13-800w.webp 800w, assets/images/optimized/portfolio13-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/portfolio13.png" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item destination">
-                        <img src="assets/images/portfolio14.png" alt="Blissera Destination Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/portfolio14-400w.avif 400w, assets/images/optimized/portfolio14-800w.avif 800w, assets/images/optimized/portfolio14-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/portfolio14-400w.webp 400w, assets/images/optimized/portfolio14-800w.webp 800w, assets/images/optimized/portfolio14-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/portfolio14.png" alt="Blissera Destination Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/portfolio15.png" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/portfolio15-400w.avif 400w, assets/images/optimized/portfolio15-800w.avif 800w, assets/images/optimized/portfolio15-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/portfolio15-400w.webp 400w, assets/images/optimized/portfolio15-800w.webp 800w, assets/images/optimized/portfolio15-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/portfolio15.png" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/supra.jpeg" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/supra-400w.avif 400w, assets/images/optimized/supra-800w.avif 800w, assets/images/optimized/supra-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/supra-400w.webp 400w, assets/images/optimized/supra-800w.webp 800w, assets/images/optimized/supra-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/supra.jpeg" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/sup8.jpeg" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/sup8-400w.avif 400w, assets/images/optimized/sup8-800w.avif 800w, assets/images/optimized/sup8-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/sup8-400w.webp 400w, assets/images/optimized/sup8-800w.webp 800w, assets/images/optimized/sup8-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/sup8.jpeg" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/sup2.jpeg" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/sup2-400w.avif 400w, assets/images/optimized/sup2-800w.avif 800w, assets/images/optimized/sup2-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/sup2-400w.webp 400w, assets/images/optimized/sup2-800w.webp 800w, assets/images/optimized/sup2-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/sup2.jpeg" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item destination">
-                        <img src="assets/images/sup1.jpeg" alt="Blissera Destination Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/sup1-400w.avif 400w, assets/images/optimized/sup1-800w.avif 800w, assets/images/optimized/sup1-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/sup1-400w.webp 400w, assets/images/optimized/sup1-800w.webp 800w, assets/images/optimized/sup1-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/sup1.jpeg" alt="Blissera Destination Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item destination">
-                        <img src="assets/images/sup5.jpeg" alt="Blissera Destination Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/sup5-400w.avif 400w, assets/images/optimized/sup5-800w.avif 800w, assets/images/optimized/sup5-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/sup5-400w.webp 400w, assets/images/optimized/sup5-800w.webp 800w, assets/images/optimized/sup5-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/sup5.jpeg" alt="Blissera Destination Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/sup6.jpeg" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/sup6-400w.avif 400w, assets/images/optimized/sup6-800w.avif 800w, assets/images/optimized/sup6-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/sup6-400w.webp 400w, assets/images/optimized/sup6-800w.webp 800w, assets/images/optimized/sup6-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/sup6.jpeg" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item birthdays">
-                        <img src="assets/images/im1.jpeg" alt="Blissera Birthday Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/im1-400w.avif 400w, assets/images/optimized/im1-800w.avif 800w, assets/images/optimized/im1-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/im1-400w.webp 400w, assets/images/optimized/im1-800w.webp 800w, assets/images/optimized/im1-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/im1.jpeg" alt="Blissera Birthday Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item destination">
-                        <img src="assets/images/dest.jpeg" alt="Blissera Destination Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/dest-400w.avif 400w, assets/images/optimized/dest-800w.avif 800w, assets/images/optimized/dest-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/dest-400w.webp 400w, assets/images/optimized/dest-800w.webp 800w, assets/images/optimized/dest-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/dest.jpeg" alt="Blissera Destination Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item birthdays">
-                        <img src="assets/images/cake.jpeg" alt="Blissera Birthday Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/cake-400w.avif 400w, assets/images/optimized/cake-800w.avif 800w, assets/images/optimized/cake-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/cake-400w.webp 400w, assets/images/optimized/cake-800w.webp 800w, assets/images/optimized/cake-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/cake.jpeg" alt="Blissera Birthday Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/sup7.jpeg" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/sup7-400w.avif 400w, assets/images/optimized/sup7-800w.avif 800w, assets/images/optimized/sup7-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/sup7-400w.webp 400w, assets/images/optimized/sup7-800w.webp 800w, assets/images/optimized/sup7-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/sup7.jpeg" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item destination">
-                        <img src="assets/images/sup11.jpeg" alt="Blissera Destination Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/sup11-400w.avif 400w, assets/images/optimized/sup11-800w.avif 800w, assets/images/optimized/sup11-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/sup11-400w.webp 400w, assets/images/optimized/sup11-800w.webp 800w, assets/images/optimized/sup11-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/sup11.jpeg" alt="Blissera Destination Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item destination">
-                        <img src="assets/images/photobooth.jpeg" alt="Blissera Destination Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/photobooth-400w.avif 400w, assets/images/optimized/photobooth-800w.avif 800w, assets/images/optimized/photobooth-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/photobooth-400w.webp 400w, assets/images/optimized/photobooth-800w.webp 800w, assets/images/optimized/photobooth-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/photobooth.jpeg" alt="Blissera Destination Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                     <div class="portfolio-item weddings">
-                        <img src="assets/images/brassprops.jpeg" alt="Blissera Wedding Event">
+                        <picture>
+    <source type="image/avif" srcset="assets/images/optimized/brassprops-400w.avif 400w, assets/images/optimized/brassprops-800w.avif 800w, assets/images/optimized/brassprops-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/brassprops-400w.webp 400w, assets/images/optimized/brassprops-800w.webp 800w, assets/images/optimized/brassprops-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/brassprops.jpeg" alt="Blissera Wedding Event"   loading="lazy" decoding="async">
+</picture>
                     </div>
                 </div>
             </div>

@@ -377,6 +377,10 @@
     </style>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/header-logo.png">
+
+    <!-- Preload critical hero image -->
+    
+    <link rel="preload" as="image" imagesrcset="assets/images/optimized/home1-400w.avif 400w, assets/images/optimized/home1-800w.avif 800w, assets/images/optimized/home1-1200w.avif 1200w, assets/images/optimized/home1-2000w.avif 2000w" imagesizes="100vw" type="image/avif">
 </head>
 
 <body class="home-page">
@@ -433,13 +437,31 @@
         <section class="hero">
             <div class="hero-slider">
                 <!-- Slide 1: General Event Vibe -->
-                <div class="slide active" style="background-image: url('assets/images/home1.jpg');">
+                <div class="slide active">
+
+        <picture class="hero-bg-picture" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;">
+            <source srcset="assets/images/optimized/home1-400w.avif 400w, assets/images/optimized/home1-800w.avif 800w, assets/images/optimized/home1-1200w.avif 1200w, assets/images/optimized/home1-2000w.avif 2000w" sizes="100vw" type="image/avif">
+            <source srcset="assets/images/optimized/home1-400w.webp 400w, assets/images/optimized/home1-800w.webp 800w, assets/images/optimized/home1-1200w.webp 1200w, assets/images/optimized/home1-2000w.webp 2000w" sizes="100vw" type="image/webp">
+            <img src="assets/images/optimized/home1-2000w.webp" alt="Background" class="hero-bg-img" style="width: 100%; height: 100%; object-fit: cover;" >
+        </picture>
                 </div>
                 <!-- Slide 2: Elegant Setup -->
-                <div class="slide" style="background-image: url('assets/images/home2.jpg');">
+                <div class="slide">
+
+        <picture class="hero-bg-picture" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;">
+            <source srcset="assets/images/optimized/home2-400w.avif 400w, assets/images/optimized/home2-800w.avif 800w, assets/images/optimized/home2-1200w.avif 1200w, assets/images/optimized/home2-2000w.avif 2000w" sizes="100vw" type="image/avif">
+            <source srcset="assets/images/optimized/home2-400w.webp 400w, assets/images/optimized/home2-800w.webp 800w, assets/images/optimized/home2-1200w.webp 1200w, assets/images/optimized/home2-2000w.webp 2000w" sizes="100vw" type="image/webp">
+            <img src="assets/images/optimized/home2-2000w.webp" alt="Background" class="hero-bg-img" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+        </picture>
                 </div>
                 <!-- Slide 3: Corporate/Gala Vibe -->
-                <div class="slide" style="background-image: url('assets/images/table1.jpg');">
+                <div class="slide">
+
+        <picture class="hero-bg-picture" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;">
+            <source srcset="assets/images/optimized/table1-400w.avif 400w, assets/images/optimized/table1-800w.avif 800w, assets/images/optimized/table1-1200w.avif 1200w, assets/images/optimized/table1-2000w.avif 2000w" sizes="100vw" type="image/avif">
+            <source srcset="assets/images/optimized/table1-400w.webp 400w, assets/images/optimized/table1-800w.webp 800w, assets/images/optimized/table1-1200w.webp 1200w, assets/images/optimized/table1-2000w.webp 2000w" sizes="100vw" type="image/webp">
+            <img src="assets/images/optimized/table1-2000w.webp" alt="Background" class="hero-bg-img" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+        </picture>
                 </div>
             </div>
 
@@ -500,8 +522,11 @@
 
                 <div class="value-prop-image fade-up" style="max-width: 450px; margin: 0 auto; width: 100%;">
                     <!-- Elegant placeholder image -->
-                    <img src="assets/images/brassprops.jpeg" alt="Elegant tabletop decor for an event"
-                        style="max-width: 100%; height: auto; position: relative; z-index: 2;">
+                    <picture>
+    <source type="image/avif" srcset="assets/images/optimized/brassprops-400w.avif 400w, assets/images/optimized/brassprops-800w.avif 800w, assets/images/optimized/brassprops-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/brassprops-400w.webp 400w, assets/images/optimized/brassprops-800w.webp 800w, assets/images/optimized/brassprops-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/brassprops.jpeg" alt="Elegant tabletop decor for an event"  style="max-width: 100%; height: auto; position: relative; z-index: 2;" loading="lazy" decoding="async">
+</picture>
                 </div>
             </div>
         </section>
@@ -519,7 +544,7 @@
                 <div class="services-grid-dynamic">
                     <!-- 1. Weddings -->
                     <div class="dynamic-service-card fade-up">
-                        <div class="dynamic-service-bg" style="background-image: url('assets/images/weds.jpeg');">
+                        <div class="dynamic-service-bg" style="background-image: url('assets/images/optimized/weds-1200w.webp'); background-image: -webkit-image-set(url('assets/images/optimized/weds-1200w.avif') type('image/avif'), url('assets/images/optimized/weds-1200w.webp') type('image/webp')); background-image: image-set(url('assets/images/optimized/weds-1200w.avif') type('image/avif'), url('assets/images/optimized/weds-1200w.webp') type('image/webp'));">
                         </div>
                         <div class="dynamic-content">
                             <h3>Weddings, Haldi, Mehndi, Engagements</h3>
@@ -536,7 +561,7 @@
 
                     <!-- 2. Birthdays -->
                     <div class="dynamic-service-card fade-up" style="transition-delay: 0.1s;">
-                        <div class="dynamic-service-bg" style="background-image: url('assets/images/theme.jpeg');">
+                        <div class="dynamic-service-bg" style="background-image: url('assets/images/optimized/theme-1200w.webp'); background-image: -webkit-image-set(url('assets/images/optimized/theme-1200w.avif') type('image/avif'), url('assets/images/optimized/theme-1200w.webp') type('image/webp')); background-image: image-set(url('assets/images/optimized/theme-1200w.avif') type('image/avif'), url('assets/images/optimized/theme-1200w.webp') type('image/webp'));">
                         </div>
                         <div class="dynamic-content">
                             <h3>Birthdays and Theme Parties</h3>
@@ -553,7 +578,7 @@
 
                     <!-- 3. Corporate -->
                     <div class="dynamic-service-card fade-up" style="transition-delay: 0.2s;">
-                        <div class="dynamic-service-bg" style="background-image: url('assets/images/seating.jpeg');">
+                        <div class="dynamic-service-bg" style="background-image: url('assets/images/optimized/seating-1200w.webp'); background-image: -webkit-image-set(url('assets/images/optimized/seating-1200w.avif') type('image/avif'), url('assets/images/optimized/seating-1200w.webp') type('image/webp')); background-image: image-set(url('assets/images/optimized/seating-1200w.avif') type('image/avif'), url('assets/images/optimized/seating-1200w.webp') type('image/webp'));">
                         </div>
                         <div class="dynamic-content">
                             <h3>Corporate Events and Launch Parties</h3>
@@ -570,7 +595,7 @@
 
                     <!-- 4. Live Shows -->
                     <div class="dynamic-service-card fade-up" style="transition-delay: 0.1s;">
-                        <div class="dynamic-service-bg" style="background-image: url('assets/images/live.jpeg');">
+                        <div class="dynamic-service-bg" style="background-image: url('assets/images/optimized/live-1200w.webp'); background-image: -webkit-image-set(url('assets/images/optimized/live-1200w.avif') type('image/avif'), url('assets/images/optimized/live-1200w.webp') type('image/webp')); background-image: image-set(url('assets/images/optimized/live-1200w.avif') type('image/avif'), url('assets/images/optimized/live-1200w.webp') type('image/webp'));">
                         </div>
                         <div class="dynamic-content">
                             <h3>Live Shows and Entertainment Nights</h3>
@@ -587,7 +612,7 @@
 
                     <!-- 5. Destination -->
                     <div class="dynamic-service-card fade-up" style="transition-delay: 0.2s;">
-                        <div class="dynamic-service-bg" style="background-image: url('assets/images/dest.jpeg');">
+                        <div class="dynamic-service-bg" style="background-image: url('assets/images/optimized/dest-1200w.webp'); background-image: -webkit-image-set(url('assets/images/optimized/dest-1200w.avif') type('image/avif'), url('assets/images/optimized/dest-1200w.webp') type('image/webp')); background-image: image-set(url('assets/images/optimized/dest-1200w.avif') type('image/avif'), url('assets/images/optimized/dest-1200w.webp') type('image/webp'));">
                         </div>
                         <div class="dynamic-content">
                             <h3>Destination and Styling</h3>
@@ -682,7 +707,20 @@
     <script src="assets/js/main.js"></script>
     <script>
         // Hero Slider Logic
+        
+        
         document.addEventListener('DOMContentLoaded', () => {
+            // Defer non-critical slide background images
+            setTimeout(() => {
+                document.querySelectorAll('.slide[data-bg-style]').forEach(el => {
+                    const bgStyle = el.getAttribute('data-bg-style');
+                    el.setAttribute('style', (el.getAttribute('style') || '') + bgStyle);
+                    el.removeAttribute('data-bg-style');
+                });
+            }, 50);
+        
+            
+        
             const slides = document.querySelectorAll('.slide');
             const indicators = document.querySelectorAll('.indicator');
             let currentSlide = 0;

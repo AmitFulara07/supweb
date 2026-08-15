@@ -131,6 +131,10 @@
     </style>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/header-logo.png">
+
+    <!-- Preload critical hero image -->
+    
+    <link rel="preload" as="image" imagesrcset="assets/images/optimized/wed-400w.avif 400w, assets/images/optimized/wed-800w.avif 800w, assets/images/optimized/wed-1200w.avif 1200w, assets/images/optimized/wed-2000w.avif 2000w" imagesizes="100vw" type="image/avif">
 </head>
 
 <body>
@@ -178,7 +182,13 @@
 
     <main>
         <!-- Page Hero -->
-        <section class="page-hero">
+        <section class="page-hero" style="position: relative; z-index: 1;">
+
+        <picture class="hero-bg-picture" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;">
+            <source srcset="assets/images/optimized/bride-400w.avif 400w, assets/images/optimized/bride-800w.avif 800w, assets/images/optimized/bride-1200w.avif 1200w, assets/images/optimized/bride-2000w.avif 2000w" sizes="100vw" type="image/avif">
+            <source srcset="assets/images/optimized/bride-400w.webp 400w, assets/images/optimized/bride-800w.webp 800w, assets/images/optimized/bride-1200w.webp 1200w, assets/images/optimized/bride-2000w.webp 2000w" sizes="100vw" type="image/webp">
+            <img src="assets/images/optimized/bride-2000w.webp" alt="Background" class="hero-bg-img" style="width: 100%; height: 100%; object-fit: cover;" >
+        </picture>
             <div class="container fade-up" style="position: relative; z-index: 2;">
                 <h1 class="heading-xl" style="color: var(--white); text-shadow: 0 4px 12px rgba(0,0,0,0.5);">Our
                     Services</h1>
@@ -200,8 +210,11 @@
                         Now</a>
                 </div>
                 <div class="category-image fade-up">
-                    <img src="assets/images/wed.jpeg" alt="Blissera Wedding and Haldi Setup"
-                        style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <picture>
+    <source type="image/avif" srcset="assets/images/optimized/wed-400w.avif 400w, assets/images/optimized/wed-800w.avif 800w, assets/images/optimized/wed-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/wed-400w.webp 400w, assets/images/optimized/wed-800w.webp 800w, assets/images/optimized/wed-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/wed.jpeg" alt="Blissera Wedding and Haldi Setup"  style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" loading="lazy" decoding="async">
+</picture>
                 </div>
             </div>
         </section>
@@ -218,8 +231,11 @@
                         Now</a>
                 </div>
                 <div class="category-image fade-up">
-                    <img src="assets/images/portfolio2.png" alt="High-end Birthday Celebration Dinner setup"
-                        style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-lg);">
+                    <picture>
+    <source type="image/avif" srcset="assets/images/optimized/portfolio2-400w.avif 400w, assets/images/optimized/portfolio2-800w.avif 800w, assets/images/optimized/portfolio2-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/portfolio2-400w.webp 400w, assets/images/optimized/portfolio2-800w.webp 800w, assets/images/optimized/portfolio2-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/portfolio2.png" alt="High-end Birthday Celebration Dinner setup"  style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-lg);" loading="lazy" decoding="async">
+</picture>
                 </div>
             </div>
         </section>
@@ -238,8 +254,11 @@
                         Now</a>
                 </div>
                 <div class="category-image fade-up">
-                    <img src="assets/images/corp.jpg" alt="Elegant Corporate Event Gala"
-                        style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-lg);">
+                    <picture>
+    <source type="image/avif" srcset="assets/images/optimized/corp-400w.avif 400w, assets/images/optimized/corp-800w.avif 800w, assets/images/optimized/corp-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/corp-400w.webp 400w, assets/images/optimized/corp-800w.webp 800w, assets/images/optimized/corp-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/corp.jpg" alt="Elegant Corporate Event Gala"  style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-lg);" loading="lazy" decoding="async">
+</picture>
                 </div>
             </div>
         </section>
@@ -255,8 +274,11 @@
                     <a href="contact.html?type=live" class="btn btn-outline" style="margin-top: 1.5rem;">Inquire Now</a>
                 </div>
                 <div class="category-image fade-up">
-                    <img src="assets/images/portfolio18.jpg" alt="Grand Stage Lighting for Live Entertainment"
-                        style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-lg);">
+                    <picture>
+    <source type="image/avif" srcset="assets/images/optimized/portfolio18-400w.avif 400w, assets/images/optimized/portfolio18-800w.avif 800w, assets/images/optimized/portfolio18-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/portfolio18-400w.webp 400w, assets/images/optimized/portfolio18-800w.webp 800w, assets/images/optimized/portfolio18-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/portfolio18.jpg" alt="Grand Stage Lighting for Live Entertainment"  style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-lg);" loading="lazy" decoding="async">
+</picture>
                 </div>
             </div>
         </section>
@@ -274,15 +296,18 @@
                         Now</a>
                 </div>
                 <div class="category-image fade-up">
-                    <img src="assets/images/portfolio17.png" alt="Luxury Palace Destination Event"
-                        style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-lg);">
+                    <picture>
+    <source type="image/avif" srcset="assets/images/optimized/portfolio17-400w.avif 400w, assets/images/optimized/portfolio17-800w.avif 800w, assets/images/optimized/portfolio17-1200w.avif 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <source type="image/webp" srcset="assets/images/optimized/portfolio17-400w.webp 400w, assets/images/optimized/portfolio17-800w.webp 800w, assets/images/optimized/portfolio17-1200w.webp 1200w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw">
+    <img src="assets/images/portfolio17.png" alt="Luxury Palace Destination Event"  style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-lg);" loading="lazy" decoding="async">
+</picture>
                 </div>
             </div>
         </section>
 
         <!-- 6. Custom Sketching & 3D Design -->
         <section id="sketching-section" class="service-category"
-            style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('assets/images/custom.jpg'); background-size: cover; background-position: center; padding: 100px 0;">
+            style="position: relative; z-index: 1; padding: 100px 0;">
             <div class="container"
                 style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
                 <div class="category-content fade-up" style="width: 100%;">

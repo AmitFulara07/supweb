@@ -887,7 +887,6 @@ img {
 .page-hero {
   height: 60vh;
   min-height: 400px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('../images/bride.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
